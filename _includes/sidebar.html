@@ -1,0 +1,38 @@
+<aside class="main-sidebar">
+    <div class="aside-container pod">
+        <h3>Navigation</h3>
+        <nav>
+            <ul class="nav">
+                {% for item in site.data.navigation %}
+                <li><a href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>{{ item.name
+                        }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    {% if page.url == '/posts/' %}
+    <div class="aside-container pod">
+        <h3>Tags</h3>
+        <nav>
+            {% assign tags = "" %}
+            {% for post in site.posts %}
+                {% for tag in post.tags %}
+                    {% assign tags = tags | append: tag | append: "," %}
+                {% endfor %}
+            {% endfor %}
+            {% assign tags = tags | split: "," %}
+            {% assign tags = tags | uniq %}
+            {% assign tags = tags | sort %}
+            <ul>
+            {% for tag in tags %}
+              {% if tag != "" %}
+                {% assign tag_posts = site.posts | where: "tags", tag %}
+                <li><a href="/tags/{{ tag }}">{{ tag }} ({{ tag_posts.size }})</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+            
+        </nav>
+    </div>
+    {% endif %}
+</aside>

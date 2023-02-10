@@ -1,0 +1,32 @@
+---
+title: Downloads
+layout: single
+---
+
+<div class="pod">
+  <h1>Downloads</h1>
+  <p>A type of archive of old projects or software that I like</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Version</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in site.data.download_db %}
+      <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.author }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.version }}</td>
+        <td><a href="{{ item.acess_link }}">Download</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

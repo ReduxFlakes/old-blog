@@ -1,0 +1,14 @@
+- name: Home
+  link: /
+
+- name: Blog
+  link: /posts/
+
+- name: Portfolio
+  link: /projects/
+
+- name: Bookmarks
+  link: /bookmarks/
+
+- name: Contact
+  link: /contact/

@@ -1,0 +1,13 @@
+<header>
+  <div class="header-content">
+  <h1>reduxflakes</h1>
+  <button id="menu-btn"><i class="bi bi-menu-down"></i></button>
+  <nav>
+    <ul>
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>{{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+  </nav>
+</div>
+</header>

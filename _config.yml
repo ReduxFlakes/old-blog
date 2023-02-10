@@ -1,0 +1,35 @@
+# gems & plugins
+plugins:
+  - jekyll-minifier
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll_reading_time
+
+# SEO
+title: Tiago Carmo
+author: Tiago Carmo
+description: Computer science student in Portugal. I do app and web development. FLOSS & privacy advocate. Horrible at socializing.
+locale: en
+url: "https://reduxflakes.github.io"
+baseurl: ""
+permalink: /:title/
+
+# collections
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
+  tags:
+    output: true
+    permalink: /tags/:title/
+
+# defaults
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post
+
+# RSS
+feed:
+  posts_limit: 20

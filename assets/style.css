@@ -1,0 +1,251 @@
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --text: #ffffff;
+  --text-muted: #cfd1d8a5;
+  --container: #1a2028;
+  --container-blur: hsla(210, 3%, 12%, 0.5);
+  --border-blur: hsla(0, 0%, 28%, 0.5);
+  --border: #2b2c2c;
+  --accent: #2991ff;
+  --rounded: 13px;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+button {
+  display: block;
+  font: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  max-width: 75%;
+  margin: 1rem auto;
+}
+
+header {
+  top: 1rem;
+  position: sticky;
+  margin: 1rem 1rem 0 1rem;
+  border-radius: var(--rounded);
+  z-index: 1000;
+  padding: 0.65rem 1.5rem;
+  backdrop-filter: blur(15px) saturate(100%);
+  background: var(--container-blur);
+  border: 1px solid var(--border-blur);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header .header-content * {
+  margin: 0;
+  padding: 0;
+}
+
+header .header-content h1 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-right: auto;
+  user-select: none;
+  font-family: var(--font-mono);
+}
+
+header .header-content button {
+  display: none;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.8;
+  transition: opacity ease-in 200ms;
+}
+
+header .header-content button:hover {
+  opacity: 1;
+}
+
+header .header-content nav > ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+header .header-content nav > ul > li > a {
+  padding: 0.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color ease-in 200ms, opacity ease-in 200ms;
+}
+
+header .header-content nav > ul > li > a:hover,
+header .header-content nav > ul > li > a.current {
+  color: var(--text);
+}
+
+main {
+  padding: 0 1.5rem;
+}
+
+footer {
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+
+.mobile {
+  display: none;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  height: calc(100vh + -72.5px);
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero div.intro {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+
+.hero div.intro h1 {
+  font-size: 2.25rem;
+  color: #7cef97;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #7cef97 0%,
+    #63dcd8 25%,
+    #99b9f8 50%,
+    #d2c3fa 75%,
+    #ffffff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero div.intro .blob {
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8, %3Csvg width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 %3E %3Cdefs%3E %3Cfilter id=%22grain%22 x=%22-50vw%22 y=%22-50vh%22 width=%22100vw%22 height=%22100vh%22%3E %3CfeFlood flood-color=%22%23ffffff%22 result=%22neutral-gray%22 %2F%3E %3CfeTurbulence in=%22neutral-gray%22 type=%22fractalNoise%22 baseFrequency=%222.5%22 numOctaves=%22100%22 stitchTiles=%22stitch%22 result=%22noise%22 %2F%3E %3CfeColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 result=%22destaturatedNoise%22 %3E%3C%2FfeColorMatrix%3E %3CfeComponentTransfer in=%22desaturatedNoise%22 result=%22theNoise%22%3E %3CfeFuncA type=%22table%22 tableValues=%220 0 0.35 0%22%3E%3C%2FfeFuncA%3E %3C%2FfeComponentTransfer%3E %3CfeBlend in=%22SourceGraphic%22 in2=%22theNoise%22 mode=%22soft-light%22 result=%22noisy-image%22 %2F%3E %3C%2Ffilter%3E %3ClinearGradient id=%22linearGradientId%22 gradientTransform=%22rotate(-15 0.5 0.5)%22%3E %3Cstop offset=%220%25%22 stop-color=%22%2365DDD4%22 %2F%3E %3Cstop offset=%2225%25%22 stop-color=%22%237ACDE5%22 %2F%3E %3Cstop offset=%2250%25%22 stop-color=%22%23A3BBF8%22 %2F%3E %3Cstop offset=%2275%25%22 stop-color=%22%23BABFF9%22 %2F%3E %3Cstop offset=%22100%25%22 stop-color=%22%23DDD2FB%22 %2F%3E %3C%2FlinearGradient%3E %3CclipPath id=%22shape%22%3E %3Cpath fill=%22currentColor%22 d=%22M873.5%2C666.5Q766%2C833%2C580.5%2C897Q395%2C961%2C239.5%2C830.5Q84%2C700%2C106.5%2C510.5Q129%2C321%2C265.5%2C195Q402%2C69%2C583%2C119Q764%2C169%2C872.5%2C334.5Q981%2C500%2C873.5%2C666.5Z%22%3E%3C%2Fpath%3E %3C%2FclipPath%3E %3C%2Fdefs%3E %3Cg filter=%22url(%23grain)%22 clip-path=%22url(%23shape)%22%3E %3Cpath fill=%22url(%23linearGradientId)%22 d=%22M873.5%2C666.5Q766%2C833%2C580.5%2C897Q395%2C961%2C239.5%2C830.5Q84%2C700%2C106.5%2C510.5Q129%2C321%2C265.5%2C195Q402%2C69%2C583%2C119Q764%2C169%2C872.5%2C334.5Q981%2C500%2C873.5%2C666.5Z%22 %2F%3E %3C%2Fg%3E %3C%2Fsvg%3E");
+}
+
+.hero div.about * {
+  margin: 0;
+  padding: 0;
+}
+
+.hero div.about span {
+  color: var(--text-muted);
+}
+
+.hero div.about h1 {
+  font-family: var(--font-mono);
+}
+
+.hero div.about p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+@media only screen and (max-width: 700px) {
+  header .header-content nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 4.75rem;
+    bottom: 0;
+  }
+  header .header-content nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    font-size: 1.05rem;
+    width: 200px;
+    border: 1px solid var(--border-blur);
+    backdrop-filter: blur(18px) saturate(100%);
+    background: var(--container-blur);
+    border-radius: var(--rounded);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+  }
+  header .header-content nav ul li a {
+    display: block;
+    padding: 0.15rem;
+  }
+  header .header-content button {
+    display: block;
+    z-index: 10;
+  }
+
+  header .header-content nav.visible {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-intro {
+    display: block;
+  }
+
+  .hero div.intro {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .hero div.intro h1 {
+    text-align: center;
+  }
+}
